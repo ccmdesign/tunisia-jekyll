@@ -248,11 +248,39 @@ layout: default
   </div>  
 </section>
 
-<section class="content-section">
+<section class="content-section budget-section">
   <div class="row align-center">
     <div class="large-8 column city-page__heading">
-      <h2>Finances deMegrine 2016</h2>
+      <h2>Finances de {{page.title | capitalize}} {{page.annee_fiscale}}</h2>
       <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 column budget-section--income">
+      <h4>Recettes Ordinaires - <span class="budget-section__total">1643k <small>TND</small></span></h4>
+      <div class="budget-graph budget-graph--income">
+        <div class="row expanded">
+          {% for i in  (5..10) %}
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{i | times: 5}}%" data-value="{{i | times: 10}}"></div>
+            <div class="budget-graph__legend">Taxes Foncières</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="large-6 column budget-section--income">
+      <h4>Recettes Ordinaires - <span class="budget-section__total">1643k <small>TND</small></span></h4>
+      <div class="budget-graph budget-graph--spending">
+        <div class="row expanded">
+          {% for i in  (5..10) %}
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{i | times: 5}}%" data-value="{{i | times: 10}}"></div>
+            <div class="budget-graph__legend">Taxes Foncières</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
