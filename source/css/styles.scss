@@ -1,0 +1,54 @@
+---
+---
+
+$main-color: #bd0000;
+$accent-color: orange;
+$green: green;
+$red: $main-color;
+$yellow: #ffa200;
+$blue: #004ea6;
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.u-material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.u-transition { transition: all .4s ease; }
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content }
+  &:-moz-placeholder { @content }
+  &::-moz-placeholder { @content }
+  &:-ms-input-placeholder { @content }
+}
+
+
+@import "header";
+@import "footer";
+@import "content-section";
+@import "landing-section";
+@import "ranking";
+@import "city-page";
+@import "cmo-graph";
+@import "evaluation-graph";
+@import "cmo-result";
+@import "custom";

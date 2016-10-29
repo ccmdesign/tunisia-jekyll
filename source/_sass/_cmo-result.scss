@@ -1,0 +1,39 @@
+.cmo-result {
+  img { max-width: 120px; }
+  .material-icons { font-size: 5rem; }
+
+  h2, h3, h4 {
+    font-weight: 400;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    text-align: right;
+    font-weight: 300;
+  }
+
+  h4 {
+    text-align: right;
+    font-size: 1.1rem;
+    opacity: .3;
+    text-transform: uppercase;
+  }
+}
+
+.cmo-result-true {
+  background-color: rgba($green, .1);
+  color: $green;
+}
+
+.cmo-result-false {
+  background-color: rgba($red, .1);
+  color: $red;
+}

@@ -1,0 +1,202 @@
+---
+layout: default
+---
+
+<header class="city-header">
+  <div class="row">
+    <div class="large-5 column city-header__name">
+      <h4>Commune</h4>
+      <h1>{{page.title | capitalize}}</h1>
+    </div>
+    <div class="large-2 column">
+      <!-- <h4>Gouvernorat</h4>
+      <h3>Ben Arous</h3> -->
+    </div>
+    <div class="large-2 column">
+      <h4>Habitants</h4>
+      <h3>{{page.nbr_habitant}}</h3>
+    </div>
+    {% if page.superficie %}
+    <div class="large-2 column">
+      <h4>Superficie</h4>
+      <h3>{{page.superficie}}m<sup>2</sup></h3>
+    </div>
+    {% endif %}
+    
+    <div class="large-1 column">
+      <h4>Année</h4>
+      <h3>{{page.annee_fiscale}}</h3>
+    </div>
+  </div>
+  <div class="city-header__subtitle">
+    <div class="row">
+      <div class="large-12 column">
+        <h2><a href="{{'./ranking.html' | relative_url}}" class="button back-to-ranking"><i class="material-icons">arrow_back</i>Back to Ranking</a>Performance et Subventions</h2>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article class="city-page">
+<section class="city-page__cmo content-section">
+  <div class="row align-center">
+    <div class="large-12 column city-page__heading">
+      <h2>Conditions Minimales Obligatoires (CMO)</h2>
+      <h3>Les conditions Minimales Obligatoires (CMO) Doivent être respectées par la commune pour qu’elle reçoive la subvention.</h3>
+    </div>
+  </div>
+  <div class="row expanded cmo-graph">
+      <div class="large-2 column large-offset-1 cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_1}}">
+        <div class="cmo-graph__status">
+          <div class="cmo-graph__image-wrapper"><img src="{{'./images/money.png' | relative_url}}" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Budget Approval</h3>
+          <p>Adoption du budget provisionnel par le conseil municipal</p>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_2}}">
+        <div class="cmo-graph__status">
+          <div class="cmo-graph__image-wrapper"><img src="{{'./images/house.png' | relative_url}}" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Financial Authorization</h3>
+          <p>Transmission des états financiers à l’autorité responsable</p>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_3}}">
+        <div class="cmo-graph__status">
+          <div class="cmo-graph__image-wrapper"><img src="{{'./images/approval.png' | relative_url}}" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Budget Approval</h3>
+          <p>Approbation du Programme Annuel d’Investissement</p>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_4}}">
+        <div class="cmo-graph__status">
+          <div class="cmo-graph__image-wrapper"><img src="{{'./images/evaluation.png' | relative_url}}" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Publication</h3>
+          <p>Publication du Plan Previsionnel des Marchés Publiques</p>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_5}}">
+        <div class="cmo-graph__status">
+          <div class="cmo-graph__image-wrapper"><img src="{{'./images/contract.png' | relative_url}}" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Final Approval</h3>
+          <p>Approbation de la convention de responsabilités</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% if page.fields.dgna_cmo_accomplissement %}
+<div class="content-section cmo-result cmo-result-true">
+  <div class="row">
+    <div class="large-3 columns"><img src="{{'./images/money.png' | relative_url}}" alt=""></div>
+    <div class="large-6 columns">
+      <h2>Subvention Reçue</h2>
+    </div>
+    <div class="large-3 column">
+      <h3>{{page.fields.dgna_total}}<small>TND</small></h3>
+      <h4>Total Received</h4>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="content-section cmo-result cmo-result-false">
+  <div class="row">
+    <div class="large-3 columns">
+      <i class="material-icons">cancel</i>      
+    </div>
+    <div class="large-6 columns">
+      <h2>Subvention non reçue</h2>
+    </div>
+    <div class="large-3 column">
+      <h3>{{page.fields.dgna_total}}<small>TND</small></h3>
+      <h4>Could have received</h4>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<section class="city-page__performance content-section content-section--gray-bg">
+  <div class="row align-center">
+    <div class="large-9 column city-page__heading">
+      <h2>Evaluation des Performances</h2>
+      <h3>Ce système d évaluation de la performance est un outil de suivi qui comprend 26 indicateurs de performance, qui sont liés à la gouvernance, à la gestion et à la pérennité.</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 column">
+      <div class="evaluation-graph">
+        <div class="evaluation-graph__item bar bar--overall">
+          <h5 class="bar__legend">Evaluation Totale</h5>
+          <div class="bar__container" data-total="100">
+            <div class="bar__value" style="width: {{page.fields.dgna_ep_accomplissement}}%" data-value="{{page.fields.dgna_ep_accomplissement}}"></div>
+          </div>
+          <div class="bar__threshold">70% - Seuil d'Approbation</div>
+        </div>
+        
+        <div class="evaluation-graph__group">
+          <div class="evaluation-graph__item bar">
+            <div class="bar__trigger"><i class="material-icons">add_circle</i></div>
+            <h5 class="bar__legend">Gouvernance</h5>
+            <div class="bar__container bar--governance" data-total="30">
+              <div class="bar__value" style="width: {{page.fields.dgna_ep_gouvernance}}%" data-value="{{page.fields.dgna_ep_gouvernance}}"></div>
+            </div>
+          </div>
+
+          <div class="evaluation-graph__item bar">
+            <div class="bar__trigger"><i class="material-icons">add_circle</i></div>
+            <h5 class="bar__legend">Gestion</h5>
+            <div class="bar__container bar--gestion" data-total="30">
+              <div class="bar__value" style="width: {{page.fields.dgna_ep_gestion}}%" data-value="{{page.fields.dgna_ep_gestion}}"></div>
+            </div>
+          </div>
+
+          <div class="evaluation-graph__item bar">
+            <div class="bar__trigger"><i class="material-icons">add_circle</i></div>
+            <h5 class="bar__legend">Pérennité</h5>
+            <div class="bar__container bar--perenity" data-total="40">
+              <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite}}%" data-value="{{page.fields.dgna_ep_perennite}}"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 column">
+      <p>Les communes sont évaluées sur un système de notation sur 100 points. Les trois thèmes de l’évaluation sont : la gouvernance, la gestion et la pérennité. Si une commune obtient un score de 70 points ou plus, elle pourra doubler le montant de sa subvention à partir de 2018.</p>
+    </div>
+    <div class="large-6 column">
+      <p>Les communes sont évaluées sur un système de notation sur 100 points. Les trois thèmes de l’évaluation sont : la gouvernance, la gestion et la pérennité. Si une commune obtient un score de 70 points ou plus, elle pourra doubler le montant de sa subvention à partir de 2018.</p>
+    </div>
+  </div>  
+</section>
+
+<section class="content-section">
+  <div class="row align-center">
+    <div class="large-8 column city-page__heading">
+      <h2>Finances deMegrine 2016</h2>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 column">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum ad fugit mollitia voluptates quas fugiat itaque neque nobis blanditiis placeat nostrum molestiae! Illum consequuntur accusamus, sit modi molestiae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis libero reprehenderit quasi laborum provident, alias nisi consequatur quisquam! Voluptas aspernatur eveniet vitae omnis aperiam eum illum quo ea modi totam.</p>
+    </div>
+    <div class="large-6 column">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum ad fugit mollitia voluptates quas fugiat itaque neque nobis blanditiis placeat nostrum molestiae! Illum consequuntur accusamus, sit modi molestiae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis libero reprehenderit quasi laborum provident, alias nisi consequatur quisquam! Voluptas aspernatur eveniet vitae omnis aperiam eum illum quo ea modi totam.</p>
+    </div>
+  </div>  
+</section>
+
+</article>
+
+

@@ -1,0 +1,113 @@
+.evaluation-graph {
+  
+  &__group {
+    border: 1px solid rgba(black, .1);
+    border-top-color: transparent;
+    padding: 30px 10px 20px 55px;
+    box-shadow: 0 0 8px rgba(black, .1) inset;
+    background-color: rgba(black, .015);
+  }
+  &__item { padding-bottom: 10px; }
+}
+
+.bar {
+  position: relative;
+  
+  &__trigger {
+    position: absolute;
+    left: -40px;
+    top: 20px;
+    opacity: .1;
+    cursor: pointer;
+    transition: all .4s ease;
+
+    &:hover {
+      opacity: .4;
+      transition: all .4s ease;
+    }
+  }
+
+  &__container {
+    height: 24px;
+    background-color: rgba(black, .1);
+    position: relative;
+
+    &:after {
+      content: attr(data-total);
+      position: absolute;
+      right: 10px;
+      padding: 3px;
+      color: white;
+      font-weight: 400;
+    }
+
+  }
+
+  &__value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    background-color: rgba(black, .1);
+
+    &:after {
+      content: attr(data-value);
+      position: absolute;
+      right: 10px;
+      padding: 3px;
+      color: white;
+      font-weight: 400;
+    }
+  }
+
+  &__legend {
+    margin: 0;
+    font-weight: 400;
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: rgba(black, .5);
+  }
+
+  &__threshold {
+    border-left: 1px solid rgba(black, .6);
+    padding-left: 6px;
+    position: relative;
+    left: 70%;
+  }
+
+  &--overall {
+    height: 32px;
+    padding-bottom: 54px;
+    
+    .bar__legend {
+      font-size: 1rem;
+    }
+    
+    .bar__value { 
+      background-color: $blue; 
+      height: 32px;
+    }
+
+    .bar__container {
+      height: 32px;
+    }
+
+    .bar__value:after, 
+    .bar__container:after {
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+  }
+
+  &--governance {
+    .bar__value { background-color: $yellow; }
+  }
+
+  &--gestion {
+    .bar__value { background-color: $red; }
+  }
+
+  &--perenity {
+    .bar__value { background-color: $green; }
+  }
+}

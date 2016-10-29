@@ -1,0 +1,45 @@
+.main-footer {
+  background-color: #333;
+  margin-top: 60px;
+  color: white;
+  padding: 0 0 40px 0;
+  
+  &__branding {
+    text-align: center;
+    margin-bottom: -30px;
+  }
+
+  &__logo {
+    position: relative;
+    top: -50px;
+    background-color: #333;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(black, .3);
+    display: inline-block;
+    border-radius: 50%;
+
+    img { 
+      max-width: 80px; 
+      opacity: .25;
+    }
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.1rem;
+  }
+}
+
+.footer-menu {
+  a {
+    display: block;
+    padding: 5px 0;
+    opacity: .7;
+    font-weight: 400;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+}
