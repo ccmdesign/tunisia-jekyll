@@ -97,8 +97,8 @@ layout: default
 {% if page.fields.dgna_cmo_accomplissement %}
 <div class="content-section cmo-result cmo-result-true">
   <div class="row">
-    <div class="large-3 columns"><img src="{{'./images/money.png' | relative_url}}" alt=""></div>
-    <div class="large-6 columns">
+    <div class="large-2 columns"><img src="{{'./images/money.png' | relative_url}}" alt=""></div>
+    <div class="large-7 columns">
       <h2>Subvention Reçue</h2>
     </div>
     <div class="large-3 column">
@@ -110,10 +110,10 @@ layout: default
 {% else %}
 <div class="content-section cmo-result cmo-result-false">
   <div class="row">
-    <div class="large-3 columns">
+    <div class="large-2 columns">
       <i class="material-icons">cancel</i>      
     </div>
-    <div class="large-6 columns">
+    <div class="large-7 columns">
       <h2>Subvention non reçue</h2>
     </div>
     <div class="large-3 column">
@@ -144,27 +144,95 @@ layout: default
         
         <div class="evaluation-graph__group">
           <div class="evaluation-graph__item bar">
-            <div class="bar__trigger"><i class="material-icons">add_circle</i></div>
+            <div class="bar__trigger js-sub-bar-trigger"><i class="material-icons">add_circle</i></div>
             <h5 class="bar__legend">Gouvernance</h5>
             <div class="bar__container bar--governance" data-total="30">
-              <div class="bar__value" style="width: {{page.fields.dgna_ep_gouvernance}}%" data-value="{{page.fields.dgna_ep_gouvernance}}"></div>
+              <div class="bar__value" style="width: {{ page.fields.dgna_ep_gouvernance | divided_by: 30.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_gouvernance}}"></div>
             </div>
+          </div>
+          
+          <div class="evaluation-graph__sub-bars js-hidden">
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Approche Participative</h5>
+              <div class="bar__container bar--governance" data-total="10">
+                <div class="bar__value" style="width: {{ page.fields.dgna_ep_gouvernance_a | divided_by: 10.0 | times: 100.0}}%" data-value="{{ page.fields.dgna_ep_gouvernance_a}}"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Transparence et acces a l’information</h5>
+              <div class="bar__container bar--governance" data-total="8">
+                <div class="bar__value" style="width: {{ page.fields.dgna_ep_gouvernance_b | divided_by: 8.0 | times: 100.0}}%" data-value="{{ page.fields.dgna_ep_gouvernance_b}}"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Mécanisme de gestion des plaintes</h5>
+              <div class="bar__container bar--governance" data-total="12">
+                <div class="bar__value" style="width: {{ page.fields.dgna_ep_gouvernance_c | divided_by: 12.0 | times: 100.0}}%" data-value="{{ page.fields.dgna_ep_gouvernance_c}}"></div>
+              </div>
+            </div>  
           </div>
 
           <div class="evaluation-graph__item bar">
-            <div class="bar__trigger"><i class="material-icons">add_circle</i></div>
+            <div class="bar__trigger js-sub-bar-trigger"><i class="material-icons">add_circle</i></div>
             <h5 class="bar__legend">Gestion</h5>
             <div class="bar__container bar--gestion" data-total="30">
-              <div class="bar__value" style="width: {{page.fields.dgna_ep_gestion}}%" data-value="{{page.fields.dgna_ep_gestion}}"></div>
+              <div class="bar__value" style="width: {{page.fields.dgna_ep_gestion | divided_by: 30.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_gestion}}"></div>
             </div>
+          </div>
+          
+          <div class="evaluation-graph__sub-bars js-hidden">
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Ressources Humaines</h5>
+              <div class="bar__container bar--gestion" data-total="12">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_gestion_a | divided_by: 12.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_gestion_a}}"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Gestion Financiere</h5>
+              <div class="bar__container bar--gestion" data-total="10">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_gestion_b | divided_by: 10.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_gestion_b}}"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Commandes Publiques</h5>
+              <div class="bar__container bar--gestion" data-total="10">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_gestion_c | divided_by: 10.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_gestion_c}}"></div>
+              </div>
+            </div>  
           </div>
 
           <div class="evaluation-graph__item bar">
-            <div class="bar__trigger"><i class="material-icons">add_circle</i></div>
+            <div class="bar__trigger js-sub-bar-trigger"><i class="material-icons">add_circle</i></div>
             <h5 class="bar__legend">Pérennité</h5>
             <div class="bar__container bar--perenity" data-total="40">
-              <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite}}%" data-value="{{page.fields.dgna_ep_perennite}}"></div>
+              <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite | divided_by: 40.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_perennite}}"></div>
             </div>
+          </div>
+          <div class="evaluation-graph__sub-bars js-hidden">
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Entretiens des Biens</h5>
+              <div class="bar__container bar--perenity" data-total="12">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite_a | divided_by: 12.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_perennite_a}}"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Assainissement des dettes</h5>
+              <div class="bar__container bar--perenity" data-total="8">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite_b | divided_by: 8.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_perennite_b}}"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Ressources Propres</h5>
+              <div class="bar__container bar--perenity" data-total="10">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite_c | divided_by: 10.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_perennite_c}}"></div>
+              </div>
+            </div>  
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Sauvegardes Sociales et Environmentales</h5>
+              <div class="bar__container bar--perenity" data-total="8">
+                <div class="bar__value" style="width: {{page.fields.dgna_ep_perennite_d | divided_by: 8.0 | times: 100.0}}%" data-value="{{page.fields.dgna_ep_perennite_d}}"></div>
+              </div>
+            </div>  
           </div>
         </div>
       </div>

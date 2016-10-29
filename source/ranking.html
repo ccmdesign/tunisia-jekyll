@@ -32,7 +32,7 @@ layout: regular
         <th class="ranking__spacing"></th>
       </thead>
       {% for i in site.data.communes %}
-        <tr>
+        <tr class="cmo-{{ i.fields.dgna_cmo_accomplissement }}">
           <td class="ranking__spacing"></td>
           <td class="ranking__position">{{ i.id }}</td>
           <td class="ranking__city"><a href="./communes/{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
