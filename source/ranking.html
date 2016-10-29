@@ -35,7 +35,7 @@ layout: regular
         <tr class="cmo-{{ i.fields.dgna_cmo_accomplissement }}">
           <td class="ranking__spacing"></td>
           <td class="ranking__position">{{ i.id }}</td>
-          <td class="ranking__city"><a href="./communes/{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
+          <td class="ranking__city"><a href="./{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
           <td class="ranking__cmo"><i class="material-icons cmo-{{ i.fields.dgna_cmo_accomplissement }}"></i></td>
           <td class="ranking__governance">{{i.fields.dgna_ep_gouvernance}}</td>
           <td class="ranking__gestion">{{i.fields.dgna_ep_gestion}}</td>

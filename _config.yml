@@ -39,5 +39,5 @@ page_gen:
   - data: communes
     template: city
     name: name
-    dir: communes
+    dir: /
     extension: html
