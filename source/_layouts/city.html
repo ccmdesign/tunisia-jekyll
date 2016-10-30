@@ -31,7 +31,7 @@ layout: default
   <div class="city-header__subtitle">
     <div class="row">
       <div class="large-12 column">
-        <h2><a href="ranking.html" class="button back-to-ranking"><i class="material-icons">arrow_back</i>Back to Ranking</a>Performance et Subventions</h2>
+        <h2><a href="index.html" class="button back-to-ranking"><i class="material-icons">arrow_back</i>Back to List</a>Performance et Subventions</h2>
       </div>
     </div>
   </div>
@@ -47,52 +47,59 @@ layout: default
   </div>
   <div class="row expanded cmo-graph">
       <div class="large-2 column large-offset-1 cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_1}}">
-        <div class="cmo-graph__status">
+        <div class="cmo-graph__status" >
           <div class="cmo-graph__image-wrapper"><img src="images/money.png" alt=""></div>
         </div>
         <div class="cmo-graph__item__text">
           <h3>Budget Approval</h3>
           <p>Adoption du budget provisionnel par le conseil municipal</p>
+          <div class="button js-cmo-trigger" data-cmo="1">Learn More</div>
         </div>
       </div>
       <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_2}}">
-        <div class="cmo-graph__status">
+        <div class="cmo-graph__status" >
           <div class="cmo-graph__image-wrapper"><img src="images/house.png" alt=""></div>
         </div>
         <div class="cmo-graph__item__text">
-          <h3>Financial Authorization</h3>
+          <h3>Financial Approval</h3>
           <p>Transmission des états financiers à l’autorité responsable</p>
+          <div class="button js-cmo-trigger" data-cmo="2">Learn More</div>
         </div>
       </div>
       <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_3}}">
-        <div class="cmo-graph__status">
+        <div class="cmo-graph__status" >
           <div class="cmo-graph__image-wrapper"><img src="images/approval.png" alt=""></div>
         </div>
         <div class="cmo-graph__item__text">
           <h3>Budget Approval</h3>
           <p>Approbation du Programme Annuel d’Investissement</p>
+          <div class="button js-cmo-trigger" data-cmo="3">Learn More</div>
         </div>
       </div>
       <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_4}}">
-        <div class="cmo-graph__status">
+        <div class="cmo-graph__status" >
           <div class="cmo-graph__image-wrapper"><img src="images/evaluation.png" alt=""></div>
         </div>
         <div class="cmo-graph__item__text">
           <h3>Publication</h3>
           <p>Publication du Plan Previsionnel des Marchés Publiques</p>
+          <div class="button js-cmo-trigger" data-cmo="4">Learn More</div>
         </div>
       </div>
       <div class="large-2 column cmo-graph__item cmo-graph__item--{{page.fields.dgna_cmo_5}}">
-        <div class="cmo-graph__status">
+        <div class="cmo-graph__status" >
           <div class="cmo-graph__image-wrapper"><img src="images/contract.png" alt=""></div>
         </div>
         <div class="cmo-graph__item__text">
           <h3>Final Approval</h3>
           <p>Approbation de la convention de responsabilités</p>
+          <div class="button js-cmo-trigger" data-cmo="5">Learn More</div>
         </div>
       </div>
     </div>
 </section>
+
+{% include cmo_explanation.html %}
 
 {% if page.fields.dgna_cmo_accomplissement %}
 <div class="content-section cmo-result cmo-result-true">

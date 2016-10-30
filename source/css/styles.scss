@@ -8,6 +8,11 @@ $red: $main-color;
 $yellow: #ffa200;
 $blue: #004ea6;
 
+$small-only: (max-width 40em);
+$medium: 40.063em;
+$touch: (max-width 64em);
+$large: 64.063em;
+
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
@@ -42,6 +47,7 @@ $blue: #004ea6;
 }
 
 
+@import "breakpoint";
 @import "header";
 @import "footer";
 @import "content-section";
@@ -51,5 +57,6 @@ $blue: #004ea6;
 @import "cmo-graph";
 @import "evaluation-graph";
 @import "cmo-result";
+@import "cmo-explanation";
 @import "budget-graph";
 @import "custom";

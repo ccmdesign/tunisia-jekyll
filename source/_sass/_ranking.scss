@@ -42,7 +42,7 @@
     }
   }
 
-  @media (max-width: 920px) {
+  @include breakpoint($touch) {
     .ranking__cmo,
     .ranking__score { min-width: 100px !important; }
     .ranking__city { width: 100% !important; }

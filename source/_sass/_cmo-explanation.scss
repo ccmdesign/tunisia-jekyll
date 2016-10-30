@@ -1,0 +1,68 @@
+.cmo-explation {
+  background-color: rgba(black, .03);
+  overflow: hidden;
+  max-height: 0;
+  transition: all .3s ease;
+  height: auto;
+
+  &.js-active {
+    max-height: 2000px;
+    transition: all .3s ease;
+  } 
+
+  > .content-section {
+    box-shadow: inset 0 0 10px rgba(black, .1);
+    border-top: 3px solid $main-color;
+    border-bottom: 3px solid $main-color;
+  }
+
+  h1, h2, h3 {
+      @include breakpoint($large) { text-align: right; }
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    p {
+      @include breakpoint($medium) { margin: 0; }
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    h1 { 
+      font-weight: 300;
+      font-size: 2.1rem;
+      @include breakpoint($medium) { margin-top: 30px; }
+    }
+
+    h2 {
+      font-weight: 300;
+      font-size: 1.1rem;
+      opacity: .5;
+      margin-bottom: 20px;
+    }
+  
+  &--true {
+    background-color: rgba($green, .03);
+    > .content-section {
+      border-top-color: $green;
+      border-bottom-color: $green;
+    }
+
+    h3 { color: rgba($green, .4); }
+    h1 { color: $green; }
+    h2 { color: darken($green, 4); }
+  }
+
+  &--false {
+    background-color: rgba($red, .03);
+    border-top-color: $red;
+    border-bottom-color: $red;
+
+    h3 { color: rgba($red, .4); }
+    h1 { color: $red; }
+    h2 { color: darken($red, 4); }
+  }
+}

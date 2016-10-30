@@ -4,6 +4,23 @@ $(document).ready(function () {
         $(this).parent().next().toggleClass('js-hidden');
         $(this).toggleClass('js-active');
     });
+
+    var cmo_status = false;
+    $('.js-cmo-trigger').click(function () {
+        var cmo = $(this);
+        var cmo_n = cmo.attr('data-cmo');
+        var cmo_boxes = $('.js-cmo-explanation');
+
+        if (cmo_status) {
+          cmo_boxes.removeClass('js-active');
+          cmo_status = false;
+        } else {
+          cmo_boxes.removeClass('js-active');
+          $('.js-cmo-' + cmo_n).addClass('js-active');
+          cmo_status = true;
+        };
+        // console.log(cmo_status);
+    });
     
 
     // Initializing list.js

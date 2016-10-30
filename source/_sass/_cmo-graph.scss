@@ -5,6 +5,17 @@
     font-size: .9rem;
 
     h3 { font-weight: 400; }
+
+    .button {
+      padding: 5px 10px;
+      display: inline-block;
+      margin: 10px auto;
+      font-size: .8rem;
+      border-radius: 3px;
+      font-weight: 400;
+
+      &:hover { color: white; }
+    }
   }
 
   &__image-wrapper {
@@ -59,6 +70,13 @@
       background-color: $green;
       content: 'check';
     }
+
+    .button { 
+      background-color: rgba($green, .1); 
+      &:hover {
+        background-color: $green;
+      }
+    }
   }
 
   &__item--false {
@@ -69,49 +87,62 @@
       background-color: $red;
       content: 'close';
     }
-  }
-}
 
-.tooltip-wrapper,
-.cmo-graph__item {
-  position: relative;
-  cursor: pointer;
+    .button { 
+      background-color: rgba($red, .1); 
+      &:hover {
+        background-color: $red;
+      }
+    }
+  }
 
-  &:hover .cmo-graph__image-wrapper { 
-    // border-color: $main-color; 
-    transition: all .7s ease;
-  }
-  &:hover .tooltip { 
-    opacity: 1; 
-    transition: all .7s ease;
-    top: calc(100% + 20px);
-  }
+
 
 }
 
-.tooltip {
-  width: 300px;
-  padding: 10px 20px;
-  position: absolute;
-  left: -45px;
-  top: calc(100% + 40px);
-  opacity: 0;
-  background-color: white;
-  border: 3px solid $main-color;
-  box-shadow: 2px 2px 5px rgba(black, .2);
-  transition: all .4s ease;
 
-  &:before {
-    content: '';
-    width: 0;
-    height: 0;
-    border: 16px solid transparent;
-    border-bottom-color: $main-color;
-    position: absolute;
-    top: -32px;
-    left: calc(50% - 16px);
-  }
 
-  h3 { color: $main-color; }
 
-}
+// .tooltip-wrapper,
+// .cmo-graph__item {
+//   position: relative;
+//   cursor: pointer;
+
+//   &:hover .cmo-graph__image-wrapper { 
+//     // border-color: $main-color; 
+//     transition: all .7s ease;
+//   }
+//   &:hover .tooltip { 
+//     opacity: 1; 
+//     transition: all .7s ease;
+//     top: calc(100% + 20px);
+//   }
+
+// }
+
+// .tooltip {
+//   width: 300px;
+//   padding: 10px 20px;
+//   position: absolute;
+//   left: -45px;
+//   top: calc(100% + 40px);
+//   opacity: 0;
+//   background-color: white;
+//   border: 3px solid $main-color;
+//   box-shadow: 2px 2px 5px rgba(black, .2);
+//   transition: all .4s ease;
+
+//   &:before {
+//     content: '';
+//     width: 0;
+//     height: 0;
+//     border: 16px solid transparent;
+//     border-bottom-color: $main-color;
+//     position: absolute;
+//     top: -32px;
+//     left: calc(50% - 16px);
+//   }
+
+//   h3 { color: $main-color; }
+
+// }
