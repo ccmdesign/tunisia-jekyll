@@ -5,8 +5,24 @@
 .ranking {
   width: 100%;
 
-  tr:nth-child(even) {
-    background-color: rgba(black, .03);
+  tr {
+    border-bottom: 1px solid rgba(black, .06);
+    &:hover {
+      box-shadow: 0 0 8px rgba(black, .2);
+      transform: scale(1.1);
+      transition: all .3s ease;
+      background-color: white;
+    }
+  }
+
+  tr.cmo-true {
+    td { background-color: rgba($green, .03); }
+    &:nth-child(even) td { background-color: rgba($green, .05); }
+    }
+
+  tr.cmo-false {
+    td { background-color: rgba($red, .03); }
+    &:nth-child(even) td { background-color: rgba($red, .05); }
   }
 
   th {
@@ -22,9 +38,11 @@
   .ranking__city {
     text-align: left;
     width: 190px;
+    font-weight: 400;
   }
   .ranking__position {
     text-align: right;
+    font-weight: 400;
     width: 55px;
   }
   .ranking__cmo {
@@ -78,6 +96,7 @@
   .ranking__score {
     width: 100px;
     text-align: right;
+    font-weight: 400;
     color: rgba(black, .8);
   }
 
