@@ -5,7 +5,7 @@
 .ranking {
   width: 100%;
 
-  tr {
+  tbody tr {
     border-bottom: 1px solid rgba(black, .06);
     &:hover {
       box-shadow: 0 0 8px rgba(black, .2);
