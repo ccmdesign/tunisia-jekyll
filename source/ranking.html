@@ -1,50 +1,41 @@
 ---
 layout: regular
 ---
-
-<article class="ranking-page content-section">
-<div class="row align-center">
-  <div class="large-8 column">
-    <h2 class="content-section__section-title">City Ranking</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur aliquam rem a hic eveniet minus quia quasi, alias, at dolorem animi, magni doloribus, sint sapiente repudiandae officia totam veritatis incidunt!</p>
-  </div>
-</div>
-
-<div class="row align-center">
-  <div class="large-8 column">
-    <form action="#" class="main-search main-search--ranking">
-      <input type="text" placeholder="Search for your City">
-    </form>
-  </div>
-</div>
-<div class="row align-center expanded">
-  <div class="large-12 column row">
-    <table class="ranking">
-      <thead>
-        <th class="ranking__spacing"></th>
-        <th class="ranking__position"># <span class="sort down"></span></th>
-        <th class="ranking__city">City <span class="sort down"></span></th>
-        <th class="ranking__cmo">CMO <span class="sort down"></span></th>
-        <th class="ranking__governance">Gouvernance <span class="sort down"></span></th>
-        <th class="ranking__gestion">Gestion <span class="sort down"></span></th>
-        <th class="ranking__perenity">Perenity <span class="sort down"></span></th>
-        <th class="ranking__score">Score <span class="sort down"></span></th>
-        <th class="ranking__spacing"></th>
-      </thead>
-      {% for i in site.data.communes %}
-        <tr class="cmo-{{ i.fields.dgna_cmo_accomplissement }}">
-          <td class="ranking__spacing"></td>
-          <td class="ranking__position">{{ i.id }}</td>
-          <td class="ranking__city"><a href="./{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
-          <td class="ranking__cmo"><i class="material-icons cmo-{{ i.fields.dgna_cmo_accomplissement }}"></i></td>
-          <td class="ranking__governance">{{i.fields.dgna_ep_gouvernance}}</td>
-          <td class="ranking__gestion">{{i.fields.dgna_ep_gestion}}</td>
-          <td class="ranking__perenity">{{i.fields.dgna_ep_perennite}}</td>
-          <td class="ranking__score">{{i.fields.dgna_ep_accomplissement}}</td>
-          <td class="ranking__spacing"></td>
+<div class="row">
+  <div id="users">
+    <input class="search" placeholder="Search" />
+    <button class="sort" data-sort="name">
+      Sort by name
+    </button>
+    <table>
+      <!-- IMPORTANT, class="list" have to be at tbody -->
+      <tbody class="list">
+        <tr>
+          <td class="name">Jonny Stromberg</td>
+          <td class="born">1986</td>
         </tr>
-      {% endfor %}
-    </table>    
+        <tr>
+          <td class="name">Jonas Arnklint</td>
+          <td class="born">1985</td>
+        </tr>
+        <tr>
+          <td class="name">Martina Elm</td>
+          <td class="born">1986</td>
+        </tr>
+        <tr>
+          <td class="name">Gustaf Lindqvist</td>
+          <td class="born">1983</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>
-</article>
+
+<script>
+var options = {
+  valueNames: [ 'name', 'born' ]
+};
+
+var userList = new List('users', options);
+</script>

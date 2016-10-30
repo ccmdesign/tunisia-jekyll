@@ -1,82 +1,64 @@
 ---
 layout: regular
 ---
+<article id="city-list">
+  <section class="content-section landing-section">
+    <div class="row align-center">
+      <div class="large-10 column">
+        <h1>Portal of Local Collectivities</h1>
+        <p class="landing-section__highlight">The program of financing and evaluation of municipalities offers a budget for cities which fill the Minimum Obligatory Conditions.</p>
+      </div>
+    </div>
+    <div class="row align-center">
+      <div class="large-10 column">
+        <form action="#" class="main-search main-search--alt">
+          <input class="search" type="text" placeholder="Find your City"><span class="main-search__icon material-icons">search</span>
+        </form>
+      </div>
+    </div>
+    <div class="row align-center">
+      <div class="large-5 column">
+        <p>The program of financing and evaluation of municipalities offers a budget for cities which fill the Minimum Obligatory Conditions. It also evaluates each city administration in terms of performance on Governance, Administration and Continuity. Here you can check the performance of your city and compare it with other ones.</p>
+      </div>
+      <div class="large-5 column">
+        <p>The program exists in 2 parts: the first defines 5 Minimum Obligatory Conditions that, once met, give an additional budget to the city. The second part is a global evaluation of procedures that have taken place that increase participation, transparency and continuity of policies. </p>
+      </div>
+    </div>
+  </section>
 
-<section class="content-section landing-section">
-  <div class="row align-center">
-    <div class="large-10 column">
-      <h1>Portal of Local Collectivities</h1>
-      <p class="landing-section__highlight">The program of financing and evaluation of municipalities offers a budget for cities which fill the Minimum Obligatory Conditions.</p>
+  <section class="ranking-page">
+    <div class="row align-center expanded">
+      <div class="large-12 column row">
+        <table class="ranking">
+          <thead>
+            <th class="ranking__spacing"></th>
+            <th class="ranking__position"># <span class="sort" data-sort="list-position"></span></th>
+            <th class="ranking__city">City <span class="sort" data-sort="list-name"></span></th>
+            <th class="ranking__cmo">CMO <span class="sort" data-sort="list-cmo"></span></th>
+            <th class="ranking__governance">Gouvernance <span class="sort" data-sort="list-governance"></span></th>
+            <th class="ranking__gestion">Gestion <span class="sort" data-sort="list-gestion"></span></th>
+            <th class="ranking__perenity">Perenity <span class="sort" data-sort="list-perenity"></span></th>
+            <th class="ranking__score">Score <span class="sort" data-sort="list-score"></span></th>
+            <th class="ranking__spacing"></th>
+          </thead>
+          <tbody class="list">
+          {% for i in site.data.communes %}
+            <tr class="cmo-{{ i.fields.dgna_cmo_accomplissement }}">
+              <td class="ranking__spacing"></td>
+              <td class="ranking__position list-position">{{ i.id }}</td>
+              <td class="ranking__city list-name"><a href="./{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
+              <td class="ranking__cmo list-cmo"><i class="material-icons cmo-{{ i.fields.dgna_cmo_accomplissement }}"></i></td>
+              <td class="ranking__governance list-governance">{{i.fields.dgna_ep_gouvernance}}</td>
+              <td class="ranking__gestion list-gestion">{{i.fields.dgna_ep_gestion}}</td>
+              <td class="ranking__perenity list-perenity">{{i.fields.dgna_ep_perennite}}</td>
+              <td class="ranking__score list-score">{{i.fields.dgna_ep_accomplissement}}</td>
+              <td class="ranking__spacing"></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>    
+      </div>
     </div>
-  </div>
-  <div class="row align-center">
-    <div class="large-10 column">
-      <form action="#" class="main-search main-search--alt">
-        <input type="text" placeholder="Find your City"><input type="submit" value="search">
-      </form>
-    </div>
-  </div>
-  <div class="row align-center">
-    <div class="large-5 column">
-      <p>The program of financing and evaluation of municipalities offers a budget for cities which fill the Minimum Obligatory Conditions. It also evaluates each city administration in terms of performance on Governance, Administration and Continuity. Here you can check the performance of your city and compare it with other ones.</p>
-    </div>
-    <div class="large-5 column">
-      <p>The program exists in 2 parts: the first defines 5 Minimum Obligatory Conditions that, once met, give an additional budget to the city. The second part is a global evaluation of procedures that have taken place that increase participation, transparency and continuity of policies. </p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="content-section content-section--gray-bg">
-  <div class="row align-center">
-    <div class="large-8 column">
-      <h2 class="content-section__section-title">The Minimum Obligatory Conditions</h2>
-      <p class="content-section__intro">These 5 points must be met in order to receive the financing. They reinforce the autonomy of the communities in order to execute their mandates and deliver local services while following principles of transparency, participation and responsibility towards the citizens.</p>
-    </div>
-  </div>
-  <div class="row expanded cmo-graph">
-    <div class="large-2 column large-offset-1 cmo-graph__item tooltip-wrapper">
-      <div class="cmo-graph__image-wrapper"><img src="./images/money.png" alt=""></div>
-      <div class="tooltip">
-        <h3>Budget Approval</h3>
-        <p>Approve of the provisional budget by the collectivity council within the stipulated date</p>
-      </div>
-    </div>
-    <div class="large-2 column cmo-graph__item tooltip-wrapper">
-      <div class="cmo-graph__image-wrapper"><img src="./images/house.png" alt=""></div>
-      <div class="tooltip">
-        <h3>Financial Authorization</h3>
-        <p>Communicate the financial data of the previous year to the responsible authority</p>
-      </div>
-    </div>
-    <div class="large-2 column cmo-graph__item tooltip-wrapper">
-      <div class="cmo-graph__image-wrapper"><img src="./images/approval.png" alt=""></div>
-      <div class="tooltip">
-        <h3>Annual Budget Approval</h3>
-        <p>Approve of the Yearly Investment Program by the collectivity council through the participatory process</p>
-      </div>
-    </div>
-    <div class="large-2 column cmo-graph__item tooltip-wrapper">
-      <div class="cmo-graph__image-wrapper"><img src="./images/evaluation.png" alt=""></div>
-      <div class="tooltip">
-        <h3>Publication</h3>
-        <p>Publish the "Provisional Plan of Public Contracts" on the national site of Public Contracts</p>
-      </div>
-    </div>
-    <div class="large-2 column cmo-graph__item tooltip-wrapper">
-      <div class="cmo-graph__image-wrapper"><img src="./images/contract.png" alt=""></div>
-      <div class="tooltip">
-        <h3>Final Approval</h3>
-        <p>Approve the Responsibility Agreement between the collectivity and the state on the subvention benefits</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="content-section">
-  <div class="row align-center">
-    <div class="large-8 column">
-      <h2 class="content-section__section-title">The Evaluation System</h2>
-      <p class="content-section__intro">Independent from the Minimal Obligatory Conditions, each community is also evaluated on 26 specific tasks. These tasks are classified in 3 categories: Governance, Administration and Continuity. Each task will ear the city points, that add up to a total of 100. These process are not related to the financing or to the Minimum Obligatory Conditions, nevertheless they show the level of performance of the city  processes in terms of transparency, responsibility and participation towards the citizen.</p>
-    </div>
-  </div>
-</section>
+</article>

@@ -21,12 +21,15 @@
 
   .ranking__city {
     text-align: left;
+    width: 190px;
   }
   .ranking__position {
     text-align: right;
+    width: 55px;
   }
   .ranking__cmo {
     text-align: center;
+    width: 85px; 
 
     .cmo-true:before {
       content: 'check';
@@ -39,6 +42,16 @@
     }
   }
 
+  @media (max-width: 920px) {
+    .ranking__cmo,
+    .ranking__score { min-width: 100px !important; }
+    .ranking__city { width: 100% !important; }
+    
+    .ranking__governance,
+    .ranking__gestion,
+    .ranking__perenity { display: none !important; }
+  }
+
   .ranking__governance,
   .ranking__gestion,
   .ranking__perenity,
@@ -48,18 +61,22 @@
   th.ranking__gestion,
   th.ranking__perenity,
   th.ranking__score { color: white; }
-
+  
+  .ranking__spacing {
+    // width: 20%;
+  }
 
   .ranking__governance {
-    
+    width: 165px;
   }
   .ranking__gestion {
-
+    width: 115px;
   }
   .ranking__perenity {
-
+    width: 125px;
   }
   .ranking__score {
+    width: 100px;
     text-align: right;
     color: rgba(black, .8);
   }
@@ -72,10 +89,11 @@
     cursor: pointer;
     display: inline-block;
     vertical-align: bottom;
+    line-height: .8;
     &:hover { opacity: 1; }
 
-    &.down:before { content: 'keyboard_arrow_down'; }
-    &.up:before { content: 'keyboard_arrow_up'; }
-    &.active { opacity: 1; }
+    &:before, &.asc { content: 'keyboard_arrow_down'; }
+    &.desc:before { content: 'keyboard_arrow_up'; }
+    &.desc, &.asc { opacity: 1; }
   }
 }

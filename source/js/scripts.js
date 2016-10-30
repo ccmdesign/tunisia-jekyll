@@ -5,6 +5,24 @@ $(document).ready(function () {
         $(this).toggleClass('js-active');
     });
     
+
+    // Initializing list.js
+    var options = {
+        valueNames: [
+          'list-position',
+          'list-name',
+          'list-cmo',
+          'list-governance',
+          'list-gestion',
+          'list-perenity',
+          'list-score'
+        ]
+      }
+
+      var cityList = new List('city-list', options);
+
+
+
 }); // doc.ready
 
 

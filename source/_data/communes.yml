@@ -91,6 +91,15 @@
 - name: kebili
   nbr_habitant: 20780
   fields:
+    budget_depense_titre_1_cat_1: 1705515
+    budget_depense_titre_1_cat_2: 627832
+    budget_depense_titre_1_cat_3: 121300
+    budget_depense_titre_1_cat_4: 132195
+    budget_depense_titre_2_cat_6: 3280000
+    budget_depense_titre_2_cat_8: 1572
+    budget_depense_titre_2_cat_10: 300000
+    budget_depense_titre_2_cat_11: 230051
+    budget_depense_titre_2_total: 3811623
     dgna_ep_perennite_b: 5
     budget_depense_titre_1_cat_5: 130000
     dgna_ep_gouvernance_b: 2
@@ -107,13 +116,8 @@
     depenses_partie_1_section_2_moyen_service: 627832
     dgna_ep_gouvernance_c_3: 5
     dgna_ep_accomplissement_av_penalite: 40
-    budget_depense_titre_1_cat_1: 1705515
-    budget_depense_titre_1_cat_3: 121300
-    budget_depense_titre_1_cat_2: 627832
     dgna_cmo_accomplissement: true
-    budget_depense_titre_1_cat_4: 132195
     dgna_ep_perennite_a: 0
-    budget_depense_titre_2_cat_8: 1572
     dgna_ep_gestion_c_4: 2
     dgna_cmo_montant: 185000
     dgna_cmo_5: true
@@ -131,15 +135,11 @@
     budget_recette_titre_1_cat_5: 229000
     budget_recette_titre_1_cat_4: 2000
     dgna_ep_perennite_c_2: 1
-    budget_depense_titre_2_total: 3811623
     dgna_ep_gestion_a: 2
     budget_recette_titre_2_cat_12: 230051
-    budget_depense_titre_2_cat_10: 300000
-    budget_depense_titre_2_cat_11: 230051
     dgna_ep_perennite_d_1: 8
     depenses_partie_1_section_1_renumeration: 1705515
     dgna_ep_gestion_b_1: 1
-    budget_depense_titre_2_cat_6: 3280000
     dgna_ep_gestion_b: 1
     dgna_ep_gestion_b_2: 0
     budget_recette_titre_2_cat_7: 1653492
