@@ -1,9 +1,12 @@
 .ranking-page {
-  
 }
 
 .ranking {
   width: 100%;
+
+  &--collapsed {
+    tbody tr:nth-child(n+11) { display: none; }
+  }
 
   tbody tr {
     border-bottom: 1px solid rgba(black, .06);
@@ -14,20 +17,21 @@
   }
 
   tr.cmo-true {
-    td { background-color: rgba($green, .03); }
-    &:nth-child(even) td { background-color: rgba($green, .05); }
+    td { background-color: rgba($green, .05); }
+    &:nth-child(even) td { background-color: rgba($green, .08); }
     }
 
   tr.cmo-false {
-    td { background-color: rgba($red, .03); }
-    &:nth-child(even) td { background-color: rgba($red, .05); }
+    td { background-color: rgba($red, .05); }
+    &:nth-child(even) td { background-color: rgba($red, .08); }
   }
 
   th {
-    font-weight: 500;
+    font-weight: 400;
     text-transform: uppercase;
     background-color: $main-color;
     color: white;
+    cursor: pointer;
   }
 
   th { padding: 10px; }
@@ -35,17 +39,15 @@
 
   .ranking__city {
     text-align: left;
-    width: 190px;
-    font-weight: 400;
+    width: 290px;
   }
   .ranking__position {
     text-align: right;
-    font-weight: 400;
-    width: 55px;
+    width: 75px;
   }
   .ranking__cmo {
     text-align: center;
-    width: 85px; 
+    width: 80px; 
 
     .cmo-true:before {
       content: 'check';
@@ -60,7 +62,7 @@
 
   @include breakpoint($touch) {
     .ranking__cmo,
-    .ranking__score { min-width: 100px !important; }
+    .ranking__score { min-width: 95px !important; }
     .ranking__city { width: 100% !important; }
     
     .ranking__governance,
@@ -99,18 +101,33 @@
   }
 
   td.ranking__score { padding-right: 50px;}
+}
 
-  .sort {
-    @extend .u-material-icons;
-    opacity: .4;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: bottom;
-    line-height: .8;
-    &:hover { opacity: 1; }
+.show-full-ranking {
+  background-color: $main-color;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+  margin: 20px;
+  cursor: pointer;
 
-    &:before, &.asc { content: 'keyboard_arrow_down'; }
-    &.desc:before { content: 'keyboard_arrow_up'; }
-    &.desc, &.asc { opacity: 1; }
+  &:hover {
+    background-color: darken($main-color, 3) !important;
   }
 }
+
+.sort-button {
+  @extend .u-material-icons;
+  opacity: .4;
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: .8;
+  .asc &,
+  .desc &,
+  &:hover { opacity: 1; }
+  &:before { content: 'keyboard_arrow_down'; }
+
+}
+
+.desc .sort-button:before { content: 'keyboard_arrow_down'; }
+.asc .sort-button:before { content: 'keyboard_arrow_up'; }

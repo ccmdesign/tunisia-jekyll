@@ -28,22 +28,24 @@ layout: regular
   <section class="ranking-page">
     <div class="row align-center expanded">
       <div class="large-12 column row">
-        <table class="ranking">
+        <table class="ranking ranking--collapsed">
           <thead>
             <th class="ranking__spacing"></th>
-            <th class="ranking__position"># <span class="sort" data-sort="list-position"></span></th>
-            <th class="ranking__city">City <span class="sort" data-sort="list-name"></span></th>
-            <th class="ranking__cmo">CMO <span class="sort" data-sort="list-cmo"></span></th>
-            <th class="ranking__governance">Gouvernance <span class="sort" data-sort="list-governance"></span></th>
-            <th class="ranking__gestion">Gestion <span class="sort" data-sort="list-gestion"></span></th>
-            <th class="ranking__perenity">Perenity <span class="sort" data-sort="list-perenity"></span></th>
-            <th class="ranking__score">Score <span class="sort" data-sort="list-score"></span></th>
+            <th data-sort="list-position" class="sort ranking__position asc"># <span class="sort-button"></span></th>
+            <th data-sort="list-name" class="sort ranking__city">City <span class="sort-button"></span></th>
+            <th data-sort="list-cmo" class="sort ranking__cmo">CMO <span class="sort-button"></span></th>
+            <th data-sort="list-governance" class="sort ranking__governance">Gouvernance <span class="sort-button"></span></th>
+            <th data-sort="list-gestion" class="sort ranking__gestion">Gestion <span class="sort-button"></span></th>
+            <th data-sort="list-perenity" class="sort ranking__perenity">Perenity <span class="sort-button"></span></th>
+            <th data-sort="list-score" class="sort ranking__score">Score <span class="sort-button"></span></th>
             <th class="ranking__spacing"></th>
           </thead>
           <tbody class="list">
-          {% for i in site.data.communes %}
+          {% assign cities = site.data.communes %}
+          {% for i in cities %}
+            {% if i.fields.dgna_ep_accomplissement %}
             <tr class="cmo-{{ i.fields.dgna_cmo_accomplissement }}">
-              <td class="ranking__spacing"></td>
+              <td class="ranking__spacing">{{i.index}}</td>
               <td class="ranking__position list-position">{{ i.id }}</td>
               <td class="ranking__city list-name"><a href="./{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
               <td class="ranking__cmo list-cmo"><i class="material-icons cmo-{{ i.fields.dgna_cmo_accomplissement }}"></i></td>
@@ -53,11 +55,18 @@ layout: regular
               <td class="ranking__score list-score">{{i.fields.dgna_ep_accomplissement}}</td>
               <td class="ranking__spacing"></td>
             </tr>
+            {% endif %}
           {% endfor %}
           </tbody>
-        </table>    
+        </table>
       </div>
     </div>
+    <div class="row align-center">
+      <div class="large-11 column"><div class="button show-full-ranking js-show-full-ranking">show all</div></div>
+    </div>
+      
+    </div>
   </section>
+
 
 </article>

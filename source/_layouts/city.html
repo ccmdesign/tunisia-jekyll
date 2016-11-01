@@ -140,6 +140,7 @@ layout: default
 </div>
 {% endif %}
 
+{% unless page.fields.dgna_ep_accomplissement == 0 %}
 <section class="city-page__performance content-section content-section--gray-bg">
   <div class="city-page__heading">
     <div class="row align-center">
@@ -262,6 +263,7 @@ layout: default
     </div>
   </div>
 </section>
+{% endunless %}
 
 <section class="content-section budget-section">
   <div class="row align-center">
@@ -272,28 +274,81 @@ layout: default
   </div>
   <div class="row">
     <div class="large-6 column budget-section--income">
-      <h4>Recettes Ordinaires - <span class="budget-section__total">1643k <small>TND</small></span></h4>
+      {% assign total_income = page.fields.budget_recette_titre_1_cat_1 | plus: page.fields.budget_recette_titre_1_cat_2 | plus: page.fields.budget_recette_titre_1_cat_3 | plus: page.fields.budget_recette_titre_1_cat_4 | plus: page.fields.budget_recette_titre_1_cat_5 | plus: page.fields.budget_recette_titre_1_cat_6 %}
+      
+      {% if total_income > 100000000 %}
+        {% assign scale = 210000.0 %}
+      {% elsif total_income > 1000000 %}
+          {% assign scale = 10000.0 %}
+      {% else %}
+          {% assign scale = 2000.0 %}
+      {% endif %}
+
+      <h4>Recettes Ordinaires - <span class="budget-section__total">{{total_income | divided_by: 1000}}k <small>TND</small></span></h4>
       <div class="budget-graph budget-graph--income">
         <div class="row expanded">
-          {% for i in  (5..10) %}
+          
           <div class="large-2 column budget-graph__column">
-            <div class="budget-graph__bar" style="height: {{i | times: 5}}%" data-value="{{i | times: 10}}"></div>
-            <div class="budget-graph__legend">Taxes Foncières</div>
+            <div class="budget-graph__bar" style="height: {{ page.fields.budget_recette_titre_1_cat_1 | divided_by: scale }}%" data-value="{{page.fields.budget_recette_titre_1_cat_1 | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend" alt="Taxes foncières et taxes sur les activités">Taxes foncières</div>
           </div>
-          {% endfor %}
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.budget_recette_titre_1_cat_2 | divided_by: scale }}%" data-value="{{page.fields.budget_recette_titre_1_cat_2 | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend" alt="Revenus d’occupation et de concession de services publics dans le domaine municipal ou régional">Revenus d’occupation</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.budget_recette_titre_1_cat_3 | divided_by: scale }}%" data-value="{{page.fields.budget_recette_titre_1_cat_3 | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend" alt="Redevances pour formalités administratives et droits perçus en atténuation de services rendus">Redevances  formalités</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.budget_recette_titre_1_cat_4 | divided_by: scale }}%" data-value="{{page.fields.budget_recette_titre_1_cat_4 | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend" alt="Autres recettes fiscales ordinaires">Autres recettes fiscales</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.budget_recette_titre_1_cat_5 | divided_by: scale }}%" data-value="{{page.fields.budget_recette_titre_1_cat_5 | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend" alt="Revenus ordinaires du domaine municipal ou régional">Revenus ordinaires</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.budget_recette_titre_1_cat_6 | divided_by: scale }}%" data-value="{{page.fields.budget_recette_titre_1_cat_6 | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend" alt="Revenus financiers ordinaires">Revenus financiers</div>
+          </div>
+          
         </div>
       </div>
     </div>
     <div class="large-6 column budget-section--income">
-      <h4>Recettes Ordinaires - <span class="budget-section__total">1643k <small>TND</small></span></h4>
+       
+
+
+      {% assign total_spending = page.fields.depenses_partie_1_section_1_renumeration | plus: page.fields.depenses_partie_1_section_2_moyen_service | plus: page.fields.depenses_partie_1_section_3_inter_publiques | plus: page.fields.depenses_partie_1_section_4_dep_imprevues | plus: page.fields.depenses_partie_2_section_5_int_dette %}
+      <h4>Depenses de Gestion - <span class="budget-section__total">{{total_spending | divided_by: 1000}}k <small>TND</small></span></h4>
       <div class="budget-graph budget-graph--spending">
-        <div class="row expanded">
-          {% for i in  (5..10) %}
+        <div class="row expanded align-center">
           <div class="large-2 column budget-graph__column">
-            <div class="budget-graph__bar" style="height: {{i | times: 5}}%" data-value="{{i | times: 10}}"></div>
-            <div class="budget-graph__legend">Taxes Foncières</div>
+            <div class="budget-graph__bar" style="height: {{ page.fields.depenses_partie_1_section_1_renumeration | divided_by: scale }}%" data-value="{{page.fields.depenses_partie_1_section_1_renumeration | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend">Rémunération publique</div>
           </div>
-          {% endfor %}
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.depenses_partie_1_section_2_moyen_service | divided_by: scale }}%" data-value="{{page.fields.depenses_partie_1_section_2_moyen_service | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend">Moyens des services</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.depenses_partie_1_section_3_inter_publiques | divided_by: scale }}%" data-value="{{page.fields.depenses_partie_1_section_3_inter_publiques | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend">Interventions publiques</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.depenses_partie_1_section_4_dep_imprevues | divided_by: scale }}%" data-value="{{page.fields.depenses_partie_1_section_4_dep_imprevues | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend">Dépenses de gestion imprévues</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: {{ page.fields.depenses_partie_2_section_5_int_dette | divided_by: scale }}%" data-value="{{page.fields.depenses_partie_2_section_5_int_dette | divided_by: 1000 | default: 0}}k"></div>
+            <div class="budget-graph__legend">Intérêts de la dette</div>
+          </div>
         </div>
       </div>
     </div>
@@ -309,5 +364,9 @@ layout: default
 </section>
 
 </article>
+{% include footer.html %}
+
+
+
 
 

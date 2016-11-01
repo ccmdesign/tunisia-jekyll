@@ -21,7 +21,12 @@ $(document).ready(function () {
         };
         // console.log(cmo_status);
     });
-    
+
+    $('.js-show-full-ranking').click(function () {
+      $('.ranking').removeClass('ranking--collapsed');
+      $(this).hide();
+    });
+        
 
     // Initializing list.js
     var options = {
