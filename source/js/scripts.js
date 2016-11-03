@@ -43,7 +43,21 @@ $(document).ready(function () {
 
       var cityList = new List('city-list', options);
 
+    // Timeline Default
+    var timelineItems = $(".timeline-boxes__item");
+    var latestTimelineItem = timelineItems[timelineItems.length -1]
+    $(latestTimelineItem).addClass("timeline-boxes__item--latest");
 
+    $(".timeline-boxes").on("mouseover", function() {
+        $(latestTimelineItem).removeClass("timeline-boxes__item--latest")
+    }).on("mouseout", function() {
+        $(latestTimelineItem).addClass("timeline-boxes__item--latest")
+    });
+
+    $( ".timeline-boxes__item" ).hover(function() {
+      $('.timeline-boxes').toggleClass('timeline-boxes--active-' + $(this).index());
+    });
+    
 
 }); // doc.ready
 

@@ -15,12 +15,14 @@
       small {
         text-transform: none;
         font-weight: 400;
+        display: block;
       }
     }
 
     img { 
       max-width: 50px; 
       margin-right: 15px;
+      float: left;
     }
 
     h4 {

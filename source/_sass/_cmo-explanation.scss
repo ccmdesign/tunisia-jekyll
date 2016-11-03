@@ -67,4 +67,12 @@
     h1 { color: $red; }
     h2 { color: darken($red, 4); }
   }
+
+  &--short {
+    p { 
+      font-size: 1.4rem; 
+      margin-top: 19px;
+      color: rgba(black, .6);
+    }
+  }
 }
