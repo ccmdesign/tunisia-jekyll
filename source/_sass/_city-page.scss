@@ -1,7 +1,16 @@
+.city-page {
+  .main-header__menu a {
+    color: white;
+  }
+}
+
 .city-header {
+  margin-top: -60px;
+  position: relative;
+  z-index: -1;
   background-color: $main-color;
   color: white;
-  padding-top: 30px;
+  padding-top: 90px;
   vertical-align: bottom;
 
   h1, h2, h3, h4 { margin: 0; }
