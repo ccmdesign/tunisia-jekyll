@@ -1,0 +1,503 @@
+<!-- _includes/base.html -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Portail des Collectivites Locales</title>
+        <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i" rel="stylesheet">
+        <link rel="stylesheet" href="vendor/foundation.min.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.3.0/list.min.js"></script>
+    </head>
+
+    <body>
+
+        <header class="city-header">
+  <div class="row">
+    <div class="large-5 column city-header__name">
+      <h4>Commune</h4>
+      <h1>Sejenane</h1>
+    </div>
+    <div class="large-2 column">
+      <!-- <h4>Gouvernorat</h4>
+      <h3>Ben Arous</h3> -->
+    </div>
+    <div class="large-2 column">
+      <h4>Habitants</h4>
+      <h3>5689</h3>
+    </div>
+    
+    <div class="large-2 column">
+      <h4>Superficie</h4>
+      <h3>0m<sup>2</sup></h3>
+    </div>
+    
+    
+    <div class="large-1 column">
+      <h4>Année</h4>
+      <h3>2016</h3>
+    </div>
+  </div>
+  <div class="city-header__subtitle">
+    <div class="row">
+      <div class="large-12 column">
+        <h2><a href="index.html" class="button back-to-ranking"><i class="material-icons">arrow_back</i>Back to List</a>Performance et Subventions</h2>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article class="city-page">
+
+<section class="city-page__performance content-section content-section--gray-bg">
+  <div class="city-page__heading">
+    <div class="row align-center">
+      <div class="large-10 column city-page__heading city-page__heading--centered">
+        <h2>Le Système d'Evaluation Performance des Communes</h2>
+        <h3><p></p></h3>
+      </div>
+    </div>
+    <div class="row align-center">
+      <div class="large-5 column"><p>Dans le cadre du Programme de Développement Urbain et de Gouvernance Locale (PDUGL), un nouveau système de transfert de subventions aux Communes a été conçu. Selon le nouveau system, le montant de la subvention est calculé sur la base d’une formule transparente, objective et équitable et est désormais conditionné par une évaluation des performances des communes ainsi que par le respect des Conditions Minimales Obligatoires (CMO) par celles-ci.</p></div>
+      <div class="large-5 column"><p>En effet, pour obtenir la totalité de leurs subventions, les Communes sont évaluées selon des indicateurs qui couvrent 3 domaines : la gouvernance, la bonne gestion et la pérennité et doivent atteindre une note de performance supérieure ou égale à 70 points sur 100 dans le cadre  de l'Evaluation des performances assurée par le Contrôle Général des Services Publics La commune doit également répondre à  cinq CMO pour bénéficier de la subvention. Il convient de noter qu’une commune n’ayant pas réuni les conditions minimales ne pourra pas toucher sa subvention pour l’exercice considéré.</p></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 column">
+      <div class="evaluation-graph">
+        <div class="evaluation-graph__item bar bar--overall">
+          <h5 class="bar__legend">Evaluation Totale</h5>
+          <div class="bar__container" data-total="100">
+            <div class="bar__value" style="width: 35%" data-value="35"></div>
+          </div>
+          <div class="bar__threshold">70% - Seuil d'Approbation</div>
+        </div>
+        
+        <div class="evaluation-graph__group">
+          <div class="evaluation-graph__item bar">
+            <div class="bar__trigger js-sub-bar-trigger"><i class="material-icons">add_circle</i></div>
+            <h5 class="bar__legend">Gouvernance</h5>
+            <div class="bar__container bar--governance" data-total="30">
+              <div class="bar__value" style="width: 40.0%" data-value="12"></div>
+            </div>
+          </div>
+          
+          <div class="evaluation-graph__sub-bars js-hidden">
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Approche Participative</h5>
+              <div class="bar__container bar--governance" data-total="10">
+                <div class="bar__value" style="width: 100.0%" data-value="10"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Transparence et acces a l’information</h5>
+              <div class="bar__container bar--governance" data-total="8">
+                <div class="bar__value" style="width: 0.0%" data-value="0"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Mécanisme de gestion des plaintes</h5>
+              <div class="bar__container bar--governance" data-total="12">
+                <div class="bar__value" style="width: 16.666666666666664%" data-value="2"></div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="evaluation-graph__item bar">
+            <div class="bar__trigger js-sub-bar-trigger"><i class="material-icons">add_circle</i></div>
+            <h5 class="bar__legend">Gestion</h5>
+            <div class="bar__container bar--gestion" data-total="30">
+              <div class="bar__value" style="width: 36.666666666666664%" data-value="11"></div>
+            </div>
+          </div>
+          
+          <div class="evaluation-graph__sub-bars js-hidden">
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Ressources Humaines</h5>
+              <div class="bar__container bar--gestion" data-total="12">
+                <div class="bar__value" style="width: 50.0%" data-value="6"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Gestion Financiere</h5>
+              <div class="bar__container bar--gestion" data-total="10">
+                <div class="bar__value" style="width: 20.0%" data-value="2"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Commandes Publiques</h5>
+              <div class="bar__container bar--gestion" data-total="10">
+                <div class="bar__value" style="width: 30.0%" data-value="3"></div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="evaluation-graph__item bar">
+            <div class="bar__trigger js-sub-bar-trigger"><i class="material-icons">add_circle</i></div>
+            <h5 class="bar__legend">Pérennité</h5>
+            <div class="bar__container bar--perenity" data-total="40">
+              <div class="bar__value" style="width: 42.5%" data-value="17"></div>
+            </div>
+          </div>
+          <div class="evaluation-graph__sub-bars js-hidden">
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Entretiens des Biens</h5>
+              <div class="bar__container bar--perenity" data-total="12">
+                <div class="bar__value" style="width: 75.0%" data-value="9"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Assainissement des dettes</h5>
+              <div class="bar__container bar--perenity" data-total="8">
+                <div class="bar__value" style="width: 37.5%" data-value="3"></div>
+              </div>
+            </div>
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Ressources Propres</h5>
+              <div class="bar__container bar--perenity" data-total="10">
+                <div class="bar__value" style="width: 50.0%" data-value="5"></div>
+              </div>
+            </div>  
+            <div class="evaluation-graph__item bar">
+              <h5 class="bar__legend">Sauvegardes Sociales et Environmentales</h5>
+              <div class="bar__container bar--perenity" data-total="8">
+                <div class="bar__value" style="width: 0.0%" data-value="0"></div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="city-page__cmo content-section">
+  <div class="city-page__heading">
+    <div class="row align-center">
+      <h2 class="large-10 column">Conditions Minimales Obligatoires (CMO)</h2>
+    </div>
+    <div class="row align-center">
+      <h3 class="large-5 column">Les Conditions Minimales Obligatoires (CMO) doivent être respectées par la commune pour qu’elle puisse recevoir la subvention.</h3>
+      <div class="large-5 column">
+        <p>Les cas échéant, la commune sera exclue de la répartition de la subvention pour l’exercice en question. Les CMO reflètent des conditions qui doivent être en place impérativement en fournissant une garantie minimale que les montants mis à la disposition des Communes seront utilisés de façon propre et pour servir les objectifs généraux visés par la subvention.</p>
+      </div>
+    </div>
+  </div>
+      
+      
+    </div>
+  </div>
+  <div class="row expanded cmo-graph">
+      <div class="large-2 column large-offset-1 cmo-graph__item cmo-graph__item--true">
+        <div class="cmo-graph__status" >
+          <div class="cmo-graph__image-wrapper"><img src="images/money.png" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Adoption du budget prévisionnel</h3>
+          <!-- <p>Adoption du budget provisionnel par le conseil municipal</p> -->
+          <div class="button js-cmo-trigger" data-cmo="1">Plus de détails</div>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--true">
+        <div class="cmo-graph__status" >
+          <div class="cmo-graph__image-wrapper"><img src="images/house.png" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Envoi des comptes financiers</h3>
+          <!-- <p>Transmission des états financiers à l’autorité responsable</p> -->
+          <div class="button js-cmo-trigger" data-cmo="2">Plus de détails</div>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--true">
+        <div class="cmo-graph__status" >
+          <div class="cmo-graph__image-wrapper"><img src="images/approval.png" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Approbation participative du PAI</h3>
+          <!-- <p>Approbation du Programme Annuel d’Investissement</p> -->
+          <div class="button js-cmo-trigger" data-cmo="3">Plus de détails</div>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--true">
+        <div class="cmo-graph__status" >
+          <div class="cmo-graph__image-wrapper"><img src="images/evaluation.png" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3 style="letter-spacing: -.3px;">Mise en ligne du plan de passation de marchés</h3>
+          <!-- <p>Publication du Plan Previsionnel des Marchés Publiques</p> -->
+          <div class="button js-cmo-trigger" data-cmo="4">Plus de détails</div>
+        </div>
+      </div>
+      <div class="large-2 column cmo-graph__item cmo-graph__item--true">
+        <div class="cmo-graph__status" >
+          <div class="cmo-graph__image-wrapper"><img src="images/contract.png" alt=""></div>
+        </div>
+        <div class="cmo-graph__item__text">
+          <h3>Approbation de la convention d'octroi</h3>
+          <!-- <p>Approbation de la convention de responsabilités</p> -->
+          <div class="button js-cmo-trigger" data-cmo="5">Plus de détails</div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- ============= CMO 1 ================== -->
+
+<section class="cmo-explation js-cmo-explanation js-cmo-1 cmo-explation--true cmo-explation--short">
+  <div class="content-section">
+  <div class="row">
+    <div class="large-7 medium-12 small-12 column">
+      <h3>Condition Fullfilled</h3>
+      <h1>Adoption du budget provisionnel par le conseil municipal</h1>
+    </div>
+    <div class="large-5 medium-6 small-12 column">
+      <h3>&nbsp;</h3>
+      <p>Adoption du budget prévisionnel pour l'année à venir par le Conseil Municipal au plus tard le 31 décembre de l’année en cours</p>
+    </div>
+  </div>  
+</div>
+</section>
+
+
+
+
+<!-- ============== CMO 2 ================== -->
+
+<section class="cmo-explation js-cmo-explanation js-cmo-2 cmo-explation--true cmo-explation--short">
+  <div class="content-section">
+  <div class="row">
+    <div class="large-4 medium-12 small-12 column">
+      <h3>Condition Fullfilled</h3>
+      <h1>Envoi des comptes financiers</h1>
+    </div>
+    <div class="large-8 medium-6 small-12 column">
+      <h3>&nbsp;</h3>
+      <p>Envoi des comptes financiers de l'année qui précède de deux ans l'année de bénéfice de la subvention, à l'autorité de tutelle, au plus tard le 15 juin de l'année qui la suit et ce après leurs validations par le conseil de la commune</p>
+    </div>
+  </div>  
+</div>
+</section>
+
+
+
+
+<!-- =============== CMO 3 ================== -->
+
+ <section class="cmo-explation js-cmo-explanation js-cmo-3 cmo-explation--true cmo-explation--short">
+  <div class="content-section">
+  <div class="row">
+    <div class="large-4 medium-12 small-12 column">
+      <h3>Condition Fullfilled</h3>
+      <h1>Approbation participative du PAI</h1>
+    </div>
+    <div class="large-8 medium-6 small-12 column">
+      <h3>&nbsp;</h3>
+      <p>Approbation du Plan Annuel d'Investissement (PAI) municipal pour l'année à venir par le Conseil Municipal et produit selon des procédures participatives satisfaisantes avant le 31 décembre de l’année en cours, cette démarche se tient entre les mois d’octobre et de décembre</p>
+    </div>
+  </div>  
+</div>
+</section>
+
+
+
+
+<!-- =============== CMO 4 ================== -->
+
+ <section class="cmo-explation js-cmo-explanation js-cmo-4 cmo-explation--true cmo-explation--short">
+  <div class="content-section">
+  <div class="row">
+    <div class="large-5 medium-12 small-12 column">
+      <h3>Condition Not Fullfilled</h3>
+      <h1>Mise en ligne du plan de passation de marchés</h1>
+    </div>
+    <div class="large-7 medium-6 small-12 column">
+      <h3>&nbsp;</h3>
+      <p>Mise en ligne du plan prévisionnel de passation des marchés de la Commune pour l'année à venir sur le site de l’Observatoire National des Marchés Publics au plus tard au 15 janvier de l’année en cours</p>
+    </div>
+  </div>  
+</div>
+</section>
+
+
+
+
+<!-- =============== CMO 5 ==================  -->
+ <section class="cmo-explation js-cmo-explanation js-cmo-5 cmo-explation--true cmo-explation--short">
+  <div class="content-section">
+  <div class="row">
+    <div class="large-4 medium-12 small-12 column">
+      <h3>Condition Fullfilled</h3>
+      <h1>Approbation de la convention d'octroi</h1>
+    </div>
+    <div class="large-8 medium-6 small-12 column">
+      <h3>&nbsp;</h3>
+      <p>Approbation par le Conseil Municipal avant le 31 décembre de l'année en cours de la convention d’octroi de la subvention en objet avec le Gouvernement représenté par la CPSCL ; cette convention définit les rôles et responsabilités de chaque partie.</p>
+    </div>
+  </div>  
+</div>
+</section>
+
+
+
+
+<div class="content-section cmo-result cmo-result-true">
+  <div class="row">
+    <div class="large-2 columns"><img src="images/money.png" alt=""></div>
+    <div class="large-7 columns">
+      <h2>Subvention Reçue</h2>
+    </div>
+    <div class="large-3 column">
+      <h3>83000<small>TND</small></h3>
+      <h4>Total Received</h4>
+    </div>
+  </div>
+</div>
+
+
+
+
+<section class="content-section budget-section">
+  <div class="row align-center">
+    <div class="large-8 column city-page__heading city-page__heading--centered">
+      <h2>Finances de Sejenane 2016</h2>
+      <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 column budget-section--income">
+      
+      
+      
+
+      <h4>Recettes Ordinaires - <span class="budget-section__total">910k <small>TND</small></span></h4>
+      <div class="budget-graph budget-graph--income">
+        <div class="row expanded">
+          
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 53.25%" data-value="106k"></div>
+            <div class="budget-graph__legend" alt="Taxes foncières et taxes sur les activités">Taxes foncières</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 55.25%" data-value="110k"></div>
+            <div class="budget-graph__legend" alt="Revenus d’occupation et de concession de services publics dans le domaine municipal ou régional">Revenus d’occupation</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 24.0%" data-value="48k"></div>
+            <div class="budget-graph__legend" alt="Redevances pour formalités administratives et droits perçus en atténuation de services rendus">Redevances  formalités</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 0.0%" data-value="0k"></div>
+            <div class="budget-graph__legend" alt="Autres recettes fiscales ordinaires">Autres recettes fiscales</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 25.25%" data-value="50k"></div>
+            <div class="budget-graph__legend" alt="Revenus ordinaires du domaine municipal ou régional">Revenus ordinaires</div>
+          </div>
+
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 297.25%" data-value="594k"></div>
+            <div class="budget-graph__legend" alt="Revenus financiers ordinaires">Revenus financiers</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="large-6 column budget-section--income">
+       
+
+
+      
+      <h4>Depenses de Gestion - <span class="budget-section__total">879k <small>TND</small></span></h4>
+      <div class="budget-graph budget-graph--spending">
+        <div class="row expanded align-center">
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 305.36%" data-value="610k"></div>
+            <div class="budget-graph__legend">Rémunération publique</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 106.6675%" data-value="213k"></div>
+            <div class="budget-graph__legend">Moyens des services</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 11.75%" data-value="23k"></div>
+            <div class="budget-graph__legend">Interventions publiques</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 0.472%" data-value="0k"></div>
+            <div class="budget-graph__legend">Dépenses de gestion imprévues</div>
+          </div>
+          <div class="large-2 column budget-graph__column">
+            <div class="budget-graph__bar" style="height: 15.5%" data-value="31k"></div>
+            <div class="budget-graph__legend">Intérêts de la dette</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 column">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum ad fugit mollitia voluptates quas fugiat itaque neque nobis blanditiis placeat nostrum molestiae! Illum consequuntur accusamus, sit modi molestiae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis libero reprehenderit quasi laborum provident, alias nisi consequatur quisquam! Voluptas aspernatur eveniet vitae omnis aperiam eum illum quo ea modi totam.</p>
+    </div>
+    <div class="large-6 column">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum laborum ad fugit mollitia voluptates quas fugiat itaque neque nobis blanditiis placeat nostrum molestiae! Illum consequuntur accusamus, sit modi molestiae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis libero reprehenderit quasi laborum provident, alias nisi consequatur quisquam! Voluptas aspernatur eveniet vitae omnis aperiam eum illum quo ea modi totam.</p>
+    </div>
+  </div>  
+</section>
+
+</article>
+<footer class="main-footer">
+  <div class="main-footer__branding">
+    <div class="main-footer__logo">
+      <img src="images/site-logo-white.png" alt="Portail des Collectivités Locale">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 column">
+      <h3>Les Communes</h3>
+      <nav class="footer-menu">
+        <a href="#">Cadre Juridique</a>
+        <a href="#">Les Transferts de l'Etat aux Communes </a>
+        <a href="#">e-Réclamation </a>
+        <a href="#">Espace de collectivites locales</a>
+        <a href="#">Carte des commune</a>
+      </nav>
+    </div>
+    <div class="large-6 column">
+      <h3>Plus d'informations</h3>
+      <nav class="footer-menu">
+        <a href="#">Contact</a>
+        <a href="#">Liens utiles</a>
+        <a href="#">Ministere des Affaires Locales et de l’Environmen</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+        <div id="overlay" class="js-overlay"></div>
+        <script src="vendor/jquery-2.1.4.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
