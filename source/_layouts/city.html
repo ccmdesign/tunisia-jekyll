@@ -1,10 +1,11 @@
 ---
 layout: default
+main_class: city-page
 ---
-
+{% include header.html %}
 <header class="city-header">
   <div class="row">
-    <div class="large-5 column city-header__name">
+    <div class="large-7 column city-header__name">
       <h4>Commune</h4>
       <h1>{{page.title | capitalize}}</h1>
     </div>
@@ -16,12 +17,6 @@ layout: default
       <h4>Habitants</h4>
       <h3>{{page.nbr_habitant}}</h3>
     </div>
-    {% if page.superficie %}
-    <div class="large-2 column">
-      <h4>Superficie</h4>
-      <h3>{{page.superficie}}m<sup>2</sup></h3>
-    </div>
-    {% endif %}
     
     <div class="large-1 column">
       <h4>Année</h4>
