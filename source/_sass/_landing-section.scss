@@ -110,7 +110,7 @@
     border-bottom: 4px solid $main-color;
     position: absolute;
     top: 30px;
-    left: calc(83.3% + 20px);
+    left: 0;
     width: 16.5%;
     transition: all .2s ease-in-out;
   }
@@ -133,7 +133,7 @@
 
     &:hover,
     &--latest,
-    &--active-5 li { 
+    &--active-0 li { 
       color: rgba(black, .7); 
       padding-top: 3%;
       padding-bottom: 5%;
@@ -162,5 +162,6 @@
   &--active-2:after { left: calc(33% + 20px); }
   &--active-3:after { left: calc(49.5% + 20px); }
   &--active-4:after { left: calc(66% + 20px); }
+  &--active-5:after { left: calc(83.3% + 20px); }
   // &--active-5:after { left: calc(99% + 20px); }
 }

@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     // Timeline Default
     var timelineItems = $(".timeline-boxes__item");
-    var latestTimelineItem = timelineItems[timelineItems.length -1]
+    var latestTimelineItem = timelineItems.first();
     $(latestTimelineItem).addClass("timeline-boxes__item--latest");
 
     $(".timeline-boxes").on("mouseover", function() {
