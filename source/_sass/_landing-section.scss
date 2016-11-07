@@ -121,7 +121,7 @@
     color: rgba(black, .2);
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 8%;
+    padding-top: 70px;
     padding-bottom: 0;
     position: relative;
     transition: all .2s ease-in-out;
@@ -135,8 +135,8 @@
     &--latest,
     &--active-0 li { 
       color: rgba(black, .7); 
-      padding-top: 3%;
-      padding-bottom: 5%;
+      padding-top: 30px;
+      padding-bottom: 30px;
 
       strong { 
         color: rgba($main-color, 1);
