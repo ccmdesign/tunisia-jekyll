@@ -87,7 +87,7 @@ layout: regular
           {% for i in cities %}
             {% if i.fields.dgna_ep_accomplissement %}
             <tr class="cmo-{{ i.fields.dgna_cmo_accomplissement }}">
-              <td class="ranking__spacing">{{i.index}}</td>
+              <td class="ranking__spacing"></td>
               <td class="ranking__position list-position">{{ i.id }}</td>
               <td class="ranking__city list-name"><a href="./{{i.name | slugify}}.html">{{i.name | capitalize}}</a></td>
               <td class="ranking__cmo list-cmo"><i class="material-icons cmo-{{ i.fields.dgna_cmo_accomplissement }}"></i></td>
@@ -95,7 +95,7 @@ layout: regular
               <td class="ranking__gestion list-gestion">{{i.fields.dgna_ep_gestion}}</td>
               <td class="ranking__perenity list-perenity">{{i.fields.dgna_ep_perennite}}</td>
               <td class="ranking__score list-score">{{i.fields.dgna_ep_accomplissement}}</td>
-              <td class="ranking__spacing"></td>
+              <td class="ranking__spacing">&nbsp;</td>
             </tr>
             {% endif %}
           {% endfor %}

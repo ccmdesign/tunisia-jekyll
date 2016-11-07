@@ -3,6 +3,9 @@
 
 .ranking {
   width: 100%;
+  // max-width: 960px;
+  margin: 0 auto;
+  table-layout:fixed;
 
   &--collapsed {
     tbody tr:nth-child(n+11) { display: none; }
